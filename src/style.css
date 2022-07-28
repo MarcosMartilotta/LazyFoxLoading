@@ -1,0 +1,24 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#images figure  {
+    display: flex;
+    justify-content: center;
+}
+
+#images figure img {
+    width: 400px;
+}
+
+ 
+h1,h3 {
+    text-align: center;
+}
+
+button {
+    display: block;
+    width: 100px; 
+}
