@@ -10,13 +10,26 @@
     <link rel="stylesheet" href="../src/style.css">
 </head>
 <body>
-    <h1>Lazi Loading</h1>
-    <h3>Proyecto_2</h3>
-    <button id="add" type="button">Agregar imagen</button>
-    <button id="clean" type="button">Limpiar</button>
+    <div class="title_container">
+        <h1>LaziFox Loading</h1>
+    </div>
+    <div class="button_container">
+        <button class="button_top" id="add" type="button">Agregar imagen</button>
+        <button class="button_top" id="clean" type="button">Limpiar</button>
+    </div>
     <div id="images">
        
     </div>
+    <!-- Con este script puedo acceder a las variables y a la funcion desde todos mis scripts de js porque es un script super global (directo desde HTML) -->
+    <script>
+        let appendImages = 0;
+        let loadImages = 0;
+        const printTotal = (appendImages, loadImages) => {
+        console.log(`⚪ Se han agregado ${appendImages} imagenes`)
+        console.log(`🟣 Se han cargado ${loadImages} imagenes`)
+        console.log(`------------------------------------------`)
+}
+    </script>
     <script type="module" src="../src/index.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 import { registerImage } from './lazy.js'
 
 const linkAleatorio = () => {
-    const numAleatorio = Math.floor(Math.random() * 118);
+    const numAleatorio = Math.floor(Math.random() * (117 - 1) + 1);
     return `https://randomfox.ca/images/${numAleatorio}.jpg`
 }
 
@@ -11,8 +11,11 @@ const addImg = () => {
     image.dataset.src = linkAleatorio();
     const container = document.querySelector('#images');
     container.append(image);
+    appendImages++;
+    /* debugger; */
+    printTotal(appendImages, loadImages);
     registerImage(image);
-    
+
 }
 
 const clean = (cleaner) => {
@@ -24,11 +27,18 @@ const clean = (cleaner) => {
     
 }
 
+/* export const printTotal = (appendImages, loadImages) => {
+    console.log(`⚪ Se han agregado ${appendImages} imagenes`)
+    console.log(`🟣 Se han cargado ${loadImages} imagenes`)
+    console.log(`------------------------------------------`)
+} */
 const button = document.querySelector('#add');
 button.addEventListener('click', addImg);
 
 const cleaner = document.querySelector('#clean');
 cleaner.addEventListener('click', clean);
 
+/* let appendImages = 0;
+let loadImages = 0; */
 
 

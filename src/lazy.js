@@ -1,4 +1,8 @@
 //
+/* import { printTotal } from './index.js' */
+/* let appendImages = 0;
+let loadImages = 0; */
+
 const isIntersecting = (entry) => {
     return entry.isIntersecting; //true dentro de la pantalla
 }
@@ -13,12 +17,15 @@ const loadImage = (entry) => {
     //Desrregistra dentro de la pantalla
     imagen.src = url; //ahora si, pongo en el src de mi etiqueta imgan en la url de la imagen;
     observer.unobserve(imagen)
+    loadImages ++;
+    printTotal(appendImages, loadImages);
 
 };
 
 //MAs info de la api del viewport en MDN 
 const observer = new IntersectionObserver((entries) => {
     entries.filter(isIntersecting).forEach(loadImage);
+
 })
 
 export const registerImage = (imagen) => {
